@@ -4,15 +4,15 @@ using namespace std;
 
 
 double findMaxAverage(vector<int>& nums, int k) {
-    double maxSumKNum= 0 ;
+    ios::sync_with_stdio(false);
     double sumKNum = 0;
     for(int i =0;i<k;i++)  {
         sumKNum+=nums[i];
     }
-    maxSumKNum = sumKNum;
+    double maxSumKNum = sumKNum;
     for(int i=1;i<=nums.size()-k;i++){
         sumKNum = sumKNum-nums[i-1]+nums[i-1+k];
-        maxSumKNum = max(maxSumKNum,sumKNum);
+        maxSumKNum = std::max(maxSumKNum,sumKNum);
     }
 
 
